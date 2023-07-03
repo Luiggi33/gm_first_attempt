@@ -41,10 +41,10 @@ LUA_FUNCTION( ReconnectPlayer )
 	}
 
 	if (!player->IsFakeClient()) {
-		LUA->PushBool(false);
-	} else {
 		player->Reconnect();
 		LUA->PushBool(true);
+	} else {
+		LUA->PushBool(false);
 	}
 
 	return 1;

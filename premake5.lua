@@ -12,7 +12,7 @@ local gmcommon = assert(_OPTIONS.gmcommon or os.getenv("GARRYSMOD_COMMON"),
     "you didn't provide a path to your garrysmod_common (https://github.com/danielga/garrysmod_common) directory")
 include(gmcommon)
 
-CreateWorkspace({name = "first_attempt", abi_compatible = false})
+CreateWorkspace({name = "first_attempt", abi_compatible = true})
     -- Serverside module (gmsv prefix)
     -- Can define "source_path", where the source files are located
     -- Can define "manual_files", which allows you to manually add files to the project,
@@ -21,7 +21,6 @@ CreateWorkspace({name = "first_attempt", abi_compatible = false})
     CreateProject({serverside = true, manual_files = false})
         -- Remove some or all of these includes if they're not needed
         -- IncludeLuaShared()
-        IncludeHelpersExtended()
         IncludeSDKCommon()
         IncludeSDKTier0()
         IncludeSDKTier1()

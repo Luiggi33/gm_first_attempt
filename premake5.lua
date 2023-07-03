@@ -20,7 +20,9 @@ CreateWorkspace({name = "first_attempt", abi_compatible = true})
     -- Can also define "abi_compatible", for project specific compatibility
     CreateProject({serverside = true, manual_files = false})
         -- Remove some or all of these includes if they're not needed
-        -- IncludeLuaShared()
+        IncludeLuaShared()
+        IncludeHelpers()
+        IncludeHelpersExtended()
         IncludeSDKCommon()
         IncludeSDKTier0()
         IncludeSDKTier1()

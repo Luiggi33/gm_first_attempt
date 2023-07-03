@@ -1,6 +1,6 @@
 ﻿#include <GarrysMod/Lua/Interface.h>
 
-LUA_FUNCTION( CalculateMiddlePoint )
+LUA_FUNCTION( CalculateVectorMiddlePoint )
 {
 	LUA->CheckType(1, GarrysMod::Lua::Type::Vector);
 	LUA->CheckType(2, GarrysMod::Lua::Type::Vector);
@@ -21,8 +21,9 @@ LUA_FUNCTION( CalculateMiddlePoint )
 GMOD_MODULE_OPEN()
 {
 	LUA->PushSpecial(GarrysMod::Lua::SPECIAL_GLOB);
-		LUA->PushCFunction(CalculateMiddlePoint);
-		LUA->SetField(-2, "CalculateMiddlePoint");
+		LUA->GetField(-1, "util");
+		LUA->PushCFunction(CalculateVectorMiddlePoint);
+		LUA->SetField(-2, "CalculateVectorMiddlePoint");
 	LUA->Pop();
 
 	return 0;
